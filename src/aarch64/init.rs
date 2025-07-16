@@ -12,7 +12,6 @@ use memory_addr::PhysAddr;
 /// # Safety
 ///
 /// This function is unsafe as it changes the CPU mode.
-#[cfg(not(feature = "arm_el2"))]
 pub unsafe fn switch_to_el1() {
     SPSel.write(SPSel::SP::ELx);
     SP_EL0.set(0);
